@@ -18,7 +18,11 @@
             v.removeAttribute('src');
             v.load();
             var img = v.parentElement && v.parentElement.querySelector('.s9__img');
+            var pgpg = v.parentElement && v.parentElement.querySelector('.pgpg'); // Шукаємо елемент pgpg
+            
             if (img) img.style.cssText = '';
+            if (pgpg) pgpg.style.cssText = ''; // Повертаємо видимість елементу pgpg
+            
             v.remove();
         });
         activeSlide = null;
@@ -29,7 +33,10 @@
         killAllVideos();
 
         var img = slide.querySelector('.s9__img');
+        var pgpg = slide.querySelector('.pgpg'); // Шукаємо елемент pgpg на клікнутому слайді
+        
         if (img) img.style.cssText = 'visibility:hidden !important;';
+        if (pgpg) pgpg.style.cssText = 'visibility:hidden !important;'; // Ховаємо елемент pgpg
 
         var v = document.createElement('video');
         v.src      = url;
