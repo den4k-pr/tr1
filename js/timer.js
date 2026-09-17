@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Елементи таймера у футері
     const hoursEl = document.getElementById('timer-hours');
     const minutesEl = document.getElementById('timer-minutes');
     const secondsEl = document.getElementById('timer-seconds');
+    
+    // Елемент текстового таймера у 5 блоці
+    const pinkTimeEl = document.querySelector('.s5-pink-time');
 
     const DAY_IN_MS = 24 * 60 * 60 * 1000;
 
@@ -35,10 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        // Виведення результату з додаванням нулів попереду (01, 02 тощо)
-        hoursEl.textContent = String(hours).padStart(2, '0');
-        minutesEl.textContent = String(minutes).padStart(2, '0');
-        secondsEl.textContent = String(seconds).padStart(2, '0');
+        // Форматування з нулями (01, 02 тощо)
+        const hStr = String(hours).padStart(2, '0');
+        const mStr = String(minutes).padStart(2, '0');
+        const sStr = String(seconds).padStart(2, '0');
+
+        // 1. Оновлюємо таймер у футері (якщо елементи існують)
+        if (hoursEl && minutesEl && secondsEl) {
+            hoursEl.textContent = hStr;
+            minutesEl.textContent = mStr;
+            secondsEl.textContent = sStr;
+        }
+
+        // 2. Оновлюємо текстовий таймер у 5-му блоці (якщо елемент існує)
+        if (pinkTimeEl) {
+            pinkTimeEl.textContent = `${hStr}:${mStr}:${sStr}`;
+        }
     }
 
     // Миттєвий запуск та встановлення інтервалу оновлення кожну секунду
