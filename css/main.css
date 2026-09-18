@@ -1752,7 +1752,7 @@ box-shadow: 0 0 12.09px 0 #FEF8D1 inset;
   .countdown-timer-wrap { gap: 1.40vw; }
   
   .footer-bg { transform: translateY(35.05vw); }
-  .footer { width: 100vw; padding: 5.61vw 5.61vw 11.68vw 5.61vw; border-top-left-radius: 5.61vw; border-top-right-radius: 5.61vw; }
+  .footer { width: 100vw; padding: 5.61vw 5.61vw; border-top-left-radius: 5.61vw; border-top-right-radius: 5.61vw; }
   .footer-container { gap: 5.61vw; }
   .footer .countdown-label { width: 45.79vw; font-size: 3.74vw; line-height: 4.21vw; letter-spacing: 0.30vw; }
   .timer-box { padding: 2.34vw 1.87vw; max-height: 8.88vw; border-radius: 3.27vw; font-size: 4.21vw; letter-spacing: 0.34vw; min-width: 8.88vw; }
